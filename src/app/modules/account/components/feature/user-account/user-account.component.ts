@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { User } from '../../../../../models/classes/user.class';
 import { AppService } from '../../../../../shared/app.service';
 import { ActivatedRoute } from '@angular/router';
+import { switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-user-account',
@@ -20,6 +21,20 @@ export class UserAccountComponent {
 
     this.userId = parseInt(this.route.snapshot.params['id'])
     //this.route.params.subscribe(params => {this.userId = params['id']});
+
+    
+    // CREER UN OBSERVABLE SUR LE CHANGEMENT DE ROUTE
+    // PUIS RELANCER LE FILTRE POUR RECUPERER L'UTILISATEUR VOULU
+
+    // this.route.params.pipe(
+    //   switchMap(params => {
+    //     const userId = parseInt(params['id']);
+    //     return this.appService.getUserById(userId);
+    //   })
+    // ).subscribe(user => {
+    //   this.user = user;
+    //   console.log(this.user);
+    // })
   }
 
   getUserById(): void {
