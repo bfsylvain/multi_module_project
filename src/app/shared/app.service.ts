@@ -14,11 +14,12 @@ export class AppService {
     return this.httpService.get<User[]>("assets/json/users.json")
   }
 
-  //CREER UNE METHODE POUR RECUPERER UN USER PAR SON ID :
-  // getUserById(userId: number): Observable<User[]> {
-  //   return this.getAllUsers()
-  //     .pipe(filter((users) => users.find((user) => user.id === userId)))
-  //   }
+  // CREER UNE METHODE POUR RECUPERER UN USER PAR SON ID :
+  getUserById(userId: number): Observable<User> {
+    const foundUser = this.getAllUsers()
+    .pipe(map(users => users.filter(user => user.id === userId)[0]))
+    return foundUser
+    }
 
 
   }
