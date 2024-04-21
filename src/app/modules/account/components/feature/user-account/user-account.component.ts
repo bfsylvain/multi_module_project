@@ -19,7 +19,7 @@ export class UserAccountComponent {
     this.getUserById()
 
     this.userId = parseInt(this.route.snapshot.params['id'])
-    //this.route.params.subscribe(params => {this.userId = params['id'];
+    //this.route.params.subscribe(params => {this.userId = params['id']});
   }
 
   getUserById(): void {
