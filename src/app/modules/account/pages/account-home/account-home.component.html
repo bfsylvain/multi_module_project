@@ -1,1 +1,9 @@
-<p>account-home works!</p>
+<ul>
+  <a
+    *ngFor="let user of userList"
+    [routerLink]="['user', user.id]"
+  >
+    <li>{{ user.username}}</li>
+  </a>
+</ul>
+<router-outlet></router-outlet>
