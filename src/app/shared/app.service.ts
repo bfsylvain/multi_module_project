@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
 import { User } from '../models/classes/user.class';
 import { HttpClient } from '@angular/common/http';
-import { Observable, filter, map } from 'rxjs';
+import { Observable, map } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class AppService {
 
+  private _userUrl: string = "assets/json/users.json"
   
   constructor(public httpService: HttpClient) { }
 
   getAllUsers(): Observable<User[]> {
-    return this.httpService.get<User[]>("assets/json/users.json")
+    return this.httpService.get<User[]>(this._userUrl)
   }
 
   // CREER UNE METHODE POUR RECUPERER UN USER PAR SON ID :
