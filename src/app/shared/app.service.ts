@@ -26,7 +26,5 @@ export class AppService {
   // stockUsersAsOservable(): void {
   //   this.listTotal = this.httpService.get<User[]>("assets/json/users.json")
   // }
-  sayHello() {
-    console.log("hello")
-  }
+
 }
