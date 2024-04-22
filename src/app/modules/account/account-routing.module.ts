@@ -5,7 +5,7 @@ import { UserAccountComponent } from './components/feature/user-account/user-acc
 
 const routes: Routes = [
   {
-    path: 'home', 
+    path: 'users', 
     component: AccountHomeComponent,
     children: [
       {
